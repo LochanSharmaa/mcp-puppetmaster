@@ -1,0 +1,23 @@
+id: MCP-SAMPLE-050
+server_id: Tavily
+name: tavily_mcp_server
+description: Executes standard operational routine for Tavily Mcp Server on Tavily.
+transport: stdio
+metadata:
+  category: search_and_retrieval
+  version: 1.0.0
+tools:
+- name: trusted_search_filter
+  description: Executes standard operational routine for Trusted Search Filter on
+    Tavily.
+  inputSchema:
+    type: object
+    properties:
+      query:
+        type: string
+        description: Search query terms
+      limit:
+        type: integer
+        description: Maximum results to retrieve
+    required:
+    - query

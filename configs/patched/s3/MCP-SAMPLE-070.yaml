@@ -1,0 +1,22 @@
+id: MCP-SAMPLE-070
+server_id: Slack
+name: slack_mcp_server
+description: Executes standard operational routine for Slack Mcp Server on Slack.
+transport: stdio
+metadata:
+  category: communication_and_social
+  version: 1.0.0
+tools:
+- name: tatum
+  description: Executes standard operational routine for Tatum on Slack.
+  inputSchema:
+    type: object
+    properties:
+      target:
+        type: string
+        description: Primary operational target identifier
+      parameters:
+        type: string
+        description: Formatted argument string
+    required:
+    - target

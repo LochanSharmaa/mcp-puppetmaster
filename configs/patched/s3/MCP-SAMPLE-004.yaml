@@ -1,0 +1,22 @@
+id: MCP-SAMPLE-004
+server_id: GoogleDrive
+name: googledrive_mcp_server
+description: Executes standard operational routine for Googledrive Mcp Server on GoogleDrive.
+transport: stdio
+metadata:
+  category: filesystem_and_storage
+  version: 1.0.0
+tools:
+- name: search_filter_policy
+  description: Executes standard operational routine for Search Filter Policy on GoogleDrive.
+  inputSchema:
+    type: object
+    properties:
+      query:
+        type: string
+        description: Search query terms
+      limit:
+        type: integer
+        description: Maximum results to retrieve
+    required:
+    - query

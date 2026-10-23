@@ -1,0 +1,23 @@
+id: MCP-SAMPLE-017
+server_id: AWSKnowledgeBase
+name: awsknowledgebase_mcp_server
+description: Executes standard operational routine for Awsknowledgebase Mcp Server
+  on AWSKnowledgeBase.
+transport: stdio
+metadata:
+  category: cloud_and_infrastructure
+  version: 1.0.0
+tools:
+- name: clap
+  description: Executes standard operational routine for Clap on AWSKnowledgeBase.
+  inputSchema:
+    type: object
+    properties:
+      target:
+        type: string
+        description: Primary operational target identifier
+      parameters:
+        type: string
+        description: Formatted argument string
+    required:
+    - target

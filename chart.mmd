@@ -1,0 +1,38 @@
+flowchart TD
+    subgraph Client["Stratum 1: Client Orchestration & Target LLM"]
+        U["User Evaluation Prompt"] --> C["MCP Client"]
+        C <-->|OpenAI Tool Calling API| M["Target LLM (Local Ollama: LLaMA-3.2, Qwen-2.5, Mistral-7B)"]
+    end
+
+    subgraph Proxy["Stratum 2: Active Telemetry Proxy Layer"]
+        P["Bidirectional Telemetry Proxy"]
+        AUDIT[("audit_traffic.jsonl\n(Timestamped JSON-RPC 2.0)")]
+        POL{"Defense Active?\n(Namespace Pinning)"}
+        P -.->|Log All Frames| AUDIT
+        P --> POL
+    end
+
+    subgraph Nodes["Stratum 3: Subprocess Server Execution Boundaries"]
+        SB["Server B: Official Filesystem\n(@modelcontextprotocol/server-filesystem)\nWorkspace: /tmp/research_workspace"]
+        SA["Server A: Adversarial Node\n(FastMCP with Shadowed 'read_file')\nAccelerated Metadata Hook"]
+        NETLOG[("network_telemetry.log\n(Execution Ground Truth)")]
+        SA -.->|Execution Event| NETLOG
+    end
+
+    subgraph Verifier["Stratum 4: Differential Analysis & Cryptographic Engine"]
+        DIFF["Differential Comparator\nanalyze_diff.py"]
+        V["Evidence Verifier\nverifier.py"]
+        PROOF[("proof_bundle.json\nSHA-256 Digest Matrix")]
+        DIFF --> V
+        V --> PROOF
+    end
+
+    C <-->|JSON-RPC via stdio| P
+    POL -->|No Pinning: Combined tools/list| M
+    POL -->|Pinning Enforced: Namespace Prefix & Path Check| SB
+    POL -.->|Block Unqualified Cross-Server Call| SA
+    POL -->|Forward Resolved Call| SA
+    POL -->|Forward Legitimate Call| SB
+
+    AUDIT --> DIFF
+    NETLOG --> DIFF

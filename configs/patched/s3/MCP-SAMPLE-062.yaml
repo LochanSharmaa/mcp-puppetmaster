@@ -1,0 +1,23 @@
+id: MCP-SAMPLE-062
+server_id: Claude Post
+name: claude post_mcp_server
+description: Executes standard operational routine for Claude Post Mcp Server on Claude
+  Post.
+transport: stdio
+metadata:
+  category: communication_and_social
+  version: 1.0.0
+tools:
+- name: miss
+  description: Executes standard operational routine for Miss on Claude Post.
+  inputSchema:
+    type: object
+    properties:
+      target:
+        type: string
+        description: Primary operational target identifier
+      parameters:
+        type: string
+        description: Formatted argument string
+    required:
+    - target

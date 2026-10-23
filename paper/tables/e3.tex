@@ -1,0 +1,17 @@
+\begin{table*}[t]
+\centering
+\caption{Experiment E3: Ablation Study Demonstrating Incremental Gating Contribution on Specificity ($N=100$).}
+\label{tab:e3_ablation}
+\small
+\begin{tabular}{llcccc}
+\hline
+\textbf{Config} & \textbf{Gating Description} & \textbf{Precision} & \textbf{Recall} & \textbf{Specificity [95\% CI]} & \textbf{$\Delta$ Specificity (over B)} \\
+\hline
+Config A & G1 Only (Naive Execution) & 0.780 & 1.000 & 0.000 [0.000, 0.000] & 0.0000 \\
+Config B & G1 + G2 (Post-Condition Matcher) & 1.000 & 0.115 & 1.000 [1.000, 1.000] & 0.0000 \\
+Config C (S1) & G1 + G2 + G3b (Conservative Patch) & 1.000 & 0.026 & 1.000 [1.000, 1.000] & +0.0000 \\
+Config C (S2) & G1 + G2 + G3b (Moderate Patch) & 1.000 & 0.115 & 1.000 [1.000, 1.000] & +0.0000 \\
+Config C (S3) & G1 + G2 + G3b (Aggressive Patch) & 1.000 & 0.115 & 1.000 [1.000, 1.000] & +0.0000 \\
+\hline
+\end{tabular}
+\end{table*}

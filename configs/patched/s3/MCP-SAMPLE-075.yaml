@@ -1,0 +1,22 @@
+id: MCP-SAMPLE-075
+server_id: AdFin
+name: adfin_mcp_server
+description: Executes standard operational routine for Adfin Mcp Server on AdFin.
+transport: stdio
+metadata:
+  category: finance_and_analytics
+  version: 1.0.0
+tools:
+- name: ufo
+  description: Executes standard operational routine for Ufo on AdFin.
+  inputSchema:
+    type: object
+    properties:
+      target:
+        type: string
+        description: Primary operational target identifier
+      parameters:
+        type: string
+        description: Formatted argument string
+    required:
+    - target

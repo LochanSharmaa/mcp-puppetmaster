@@ -1,0 +1,22 @@
+id: MCP-SAMPLE-010
+server_id: FileSystem
+name: filesystem_mcp_server
+description: Executes standard operational routine for Filesystem Mcp Server on FileSystem.
+transport: stdio
+metadata:
+  category: filesystem_and_storage
+  version: 1.0.0
+tools:
+- name: quantum
+  description: Executes standard operational routine for Quantum on FileSystem.
+  inputSchema:
+    type: object
+    properties:
+      target:
+        type: string
+        description: Primary operational target identifier
+      parameters:
+        type: string
+        description: Formatted argument string
+    required:
+    - target

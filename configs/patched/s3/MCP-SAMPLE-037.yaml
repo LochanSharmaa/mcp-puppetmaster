@@ -1,0 +1,22 @@
+id: MCP-SAMPLE-037
+server_id: Redis
+name: redis_mcp_server
+description: Executes standard operational routine for Redis Mcp Server on Redis.
+transport: stdio
+metadata:
+  category: database_and_cache
+  version: 1.0.0
+tools:
+- name: security_protocol
+  description: Executes standard operational routine for Security Protocol on Redis.
+  inputSchema:
+    type: object
+    properties:
+      target:
+        type: string
+        description: Primary operational target identifier
+      parameters:
+        type: string
+        description: Formatted argument string
+    required:
+    - target

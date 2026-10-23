@@ -1,0 +1,22 @@
+id: MCP-SAMPLE-039
+server_id: SQLite
+name: sqlite_mcp_server
+description: Executes standard operational routine for Sqlite Mcp Server on SQLite.
+transport: stdio
+metadata:
+  category: database_and_cache
+  version: 1.0.0
+tools:
+- name: ten
+  description: Executes standard operational routine for Ten on SQLite.
+  inputSchema:
+    type: object
+    properties:
+      target:
+        type: string
+        description: Primary operational target identifier
+      parameters:
+        type: string
+        description: Formatted argument string
+    required:
+    - target

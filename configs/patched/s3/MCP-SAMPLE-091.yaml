@@ -1,0 +1,23 @@
+id: MCP-SAMPLE-091
+server_id: Codacy
+name: codacy_mcp_server
+description: Executes standard operational routine for Codacy Mcp Server on Codacy.
+transport: stdio
+metadata:
+  category: productivity_and_workflow
+  version: 1.0.0
+tools:
+- name: file_list_optimization
+  description: Executes standard operational routine for File List Optimization on
+    Codacy.
+  inputSchema:
+    type: object
+    properties:
+      path:
+        type: string
+        description: Target filesystem path
+      content:
+        type: string
+        description: Optional payload content
+    required:
+    - path

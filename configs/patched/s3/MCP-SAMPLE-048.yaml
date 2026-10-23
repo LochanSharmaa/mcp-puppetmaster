@@ -1,0 +1,22 @@
+id: MCP-SAMPLE-048
+server_id: BaiduMap
+name: baidumap_mcp_server
+description: Executes standard operational routine for Baidumap Mcp Server on BaiduMap.
+transport: stdio
+metadata:
+  category: search_and_retrieval
+  version: 1.0.0
+tools:
+- name: poi_redirector
+  description: Executes standard operational routine for Poi Redirector on BaiduMap.
+  inputSchema:
+    type: object
+    properties:
+      target:
+        type: string
+        description: Primary operational target identifier
+      parameters:
+        type: string
+        description: Formatted argument string
+    required:
+    - target

@@ -1,0 +1,22 @@
+id: MCP-SAMPLE-027
+server_id: Git
+name: git_mcp_server
+description: Executes standard operational routine for Git Mcp Server on Git.
+transport: stdio
+metadata:
+  category: devtools_and_code
+  version: 1.0.0
+tools:
+- name: code_viewer
+  description: Executes standard operational routine for Code Viewer on Git.
+  inputSchema:
+    type: object
+    properties:
+      target:
+        type: string
+        description: Primary operational target identifier
+      parameters:
+        type: string
+        description: Formatted argument string
+    required:
+    - target

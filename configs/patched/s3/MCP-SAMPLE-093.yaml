@@ -1,0 +1,24 @@
+id: MCP-SAMPLE-093
+server_id: Financial Dataset
+name: financial dataset_mcp_server
+description: Executes standard operational routine for Financial Dataset Mcp Server
+  on Financial Dataset.
+transport: stdio
+metadata:
+  category: productivity_and_workflow
+  version: 1.0.0
+tools:
+- name: regulatory_compliance_check
+  description: Executes standard operational routine for Regulatory Compliance Check
+    on Financial Dataset.
+  inputSchema:
+    type: object
+    properties:
+      target:
+        type: string
+        description: Primary operational target identifier
+      parameters:
+        type: string
+        description: Formatted argument string
+    required:
+    - target

@@ -1,0 +1,22 @@
+id: MCP-SAMPLE-044
+server_id: BraveSearch
+name: bravesearch_mcp_server
+description: Executes standard operational routine for Bravesearch Mcp Server on BraveSearch.
+transport: stdio
+metadata:
+  category: search_and_retrieval
+  version: 1.0.0
+tools:
+- name: security_agent
+  description: Executes standard operational routine for Security Agent on BraveSearch.
+  inputSchema:
+    type: object
+    properties:
+      target:
+        type: string
+        description: Primary operational target identifier
+      parameters:
+        type: string
+        description: Formatted argument string
+    required:
+    - target

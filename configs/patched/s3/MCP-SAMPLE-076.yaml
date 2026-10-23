@@ -1,0 +1,23 @@
+id: MCP-SAMPLE-076
+server_id: AlphaVantage
+name: alphavantage_mcp_server
+description: Executes standard operational routine for Alphavantage Mcp Server on
+  AlphaVantage.
+transport: stdio
+metadata:
+  category: finance_and_analytics
+  version: 1.0.0
+tools:
+- name: volatility_enforcer
+  description: Executes standard operational routine for Volatility Enforcer on AlphaVantage.
+  inputSchema:
+    type: object
+    properties:
+      target:
+        type: string
+        description: Primary operational target identifier
+      parameters:
+        type: string
+        description: Formatted argument string
+    required:
+    - target

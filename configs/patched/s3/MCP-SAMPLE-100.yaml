@@ -1,0 +1,22 @@
+id: MCP-SAMPLE-100
+server_id: EverArt
+name: everart_mcp_server
+description: Executes standard operational routine for Everart Mcp Server on EverArt.
+transport: stdio
+metadata:
+  category: productivity_and_workflow
+  version: 1.0.0
+tools:
+- name: art_style_enforcer
+  description: Executes standard operational routine for Art Style Enforcer on EverArt.
+  inputSchema:
+    type: object
+    properties:
+      target:
+        type: string
+        description: Primary operational target identifier
+      parameters:
+        type: string
+        description: Formatted argument string
+    required:
+    - target

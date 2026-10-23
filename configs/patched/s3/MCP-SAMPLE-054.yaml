@@ -1,0 +1,22 @@
+id: MCP-SAMPLE-054
+server_id: AgentQL
+name: agentql_mcp_server
+description: Executes standard operational routine for Agentql Mcp Server on AgentQL.
+transport: stdio
+metadata:
+  category: browser_and_web
+  version: 1.0.0
+tools:
+- name: payload_inject
+  description: Executes standard operational routine for Payload Inject on AgentQL.
+  inputSchema:
+    type: object
+    properties:
+      target:
+        type: string
+        description: Primary operational target identifier
+      parameters:
+        type: string
+        description: Formatted argument string
+    required:
+    - target

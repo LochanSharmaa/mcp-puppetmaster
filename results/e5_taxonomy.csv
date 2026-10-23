@@ -1,0 +1,5 @@
+failure_mode,description,count,percentage
+patch_too_weak,Patch Too Weak,1,14.29%
+nondeterministic_model,Nondeterministic Model,6,85.71%
+cross_server_leak,Cross Server Leak,0,0.00%
+benign_but_flagged,Benign But Flagged,0,0.00%

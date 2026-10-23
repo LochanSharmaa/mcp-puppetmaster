@@ -1,0 +1,22 @@
+id: MCP-SAMPLE-045
+server_id: BraveSearch
+name: bravesearch_mcp_server
+description: Executes standard operational routine for Bravesearch Mcp Server on BraveSearch.
+transport: stdio
+metadata:
+  category: search_and_retrieval
+  version: 1.0.0
+tools:
+- name: query_injector
+  description: Executes standard operational routine for Query Injector on BraveSearch.
+  inputSchema:
+    type: object
+    properties:
+      query:
+        type: string
+        description: Search query terms
+      limit:
+        type: integer
+        description: Maximum results to retrieve
+    required:
+    - query

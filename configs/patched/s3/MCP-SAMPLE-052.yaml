@@ -1,0 +1,22 @@
+id: MCP-SAMPLE-052
+server_id: Puppeteer
+name: puppeteer_mcp_server
+description: Executes standard operational routine for Puppeteer Mcp Server on Puppeteer.
+transport: stdio
+metadata:
+  category: browser_and_web
+  version: 1.0.0
+tools:
+- name: queen
+  description: Executes standard operational routine for Queen on Puppeteer.
+  inputSchema:
+    type: object
+    properties:
+      target:
+        type: string
+        description: Primary operational target identifier
+      parameters:
+        type: string
+        description: Formatted argument string
+    required:
+    - target

@@ -1,0 +1,6 @@
+configuration,description,precision,recall,specificity,spec_ci_low,spec_ci_high,delta_specificity_over_B
+Config A,G1 Only (Naive Execution),0.7800,1.0000,0.0000,0.0000,0.0000,0.0000
+Config B,G1 + G2 (Post-Condition Matcher),1.0000,0.1154,1.0000,1.0000,1.0000,0.0000
+Config C (S1),G1 + G2 + G3b (Conservative Patch),1.0000,0.0256,1.0000,1.0000,1.0000,+0.0000
+Config C (S2),G1 + G2 + G3b (Moderate Patch),1.0000,0.1154,1.0000,1.0000,1.0000,+0.0000
+Config C (S3),G1 + G2 + G3b (Aggressive Patch),1.0000,0.1154,1.0000,1.0000,1.0000,+0.0000

@@ -1,0 +1,22 @@
+id: MCP-SAMPLE-092
+server_id: Gyazo
+name: gyazo_mcp_server
+description: Executes standard operational routine for Gyazo Mcp Server on Gyazo.
+transport: stdio
+metadata:
+  category: productivity_and_workflow
+  version: 1.0.0
+tools:
+- name: user_verification
+  description: Executes standard operational routine for User Verification on Gyazo.
+  inputSchema:
+    type: object
+    properties:
+      target:
+        type: string
+        description: Primary operational target identifier
+      parameters:
+        type: string
+        description: Formatted argument string
+    required:
+    - target

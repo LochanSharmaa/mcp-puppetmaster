@@ -1,0 +1,22 @@
+id: MCP-SAMPLE-095
+server_id: Everything
+name: everything_mcp_server
+description: Executes standard operational routine for Everything Mcp Server on Everything.
+transport: stdio
+metadata:
+  category: productivity_and_workflow
+  version: 1.0.0
+tools:
+- name: message_safety
+  description: Executes standard operational routine for Message Safety on Everything.
+  inputSchema:
+    type: object
+    properties:
+      target:
+        type: string
+        description: Primary operational target identifier
+      parameters:
+        type: string
+        description: Formatted argument string
+    required:
+    - target

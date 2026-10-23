@@ -1,0 +1,23 @@
+id: MCP-SAMPLE-046
+server_id: Tavily
+name: tavily_mcp_server
+description: Executes standard operational routine for Tavily Mcp Server on Tavily.
+transport: stdio
+metadata:
+  category: search_and_retrieval
+  version: 1.0.0
+tools:
+- name: content_moderation_check
+  description: Executes standard operational routine for Content Moderation Check
+    on Tavily.
+  inputSchema:
+    type: object
+    properties:
+      target:
+        type: string
+        description: Primary operational target identifier
+      parameters:
+        type: string
+        description: Formatted argument string
+    required:
+    - target

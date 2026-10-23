@@ -1,0 +1,18 @@
+\begin{table*}[t]
+\centering
+\caption{Experiment E1: Precision, Recall, F1, and Specificity across Baselines and Counterfactual Oracle Variants ($N=100$, 95\% Bootstrap CIs).}
+\label{tab:e1_baselines}
+\small
+\begin{tabular}{lcccc}
+\hline
+\textbf{System} & \textbf{Precision [95\% CI]} & \textbf{Recall [95\% CI]} & \textbf{F1-Score} & \textbf{Specificity [95\% CI]} \\
+\hline
+Heuristic Baseline & 1.000 [1.000, 1.000] & 0.538 [0.429, 0.649] & 0.700 & 1.000 [1.000, 1.000] \\
+MCP-Scan & \multicolumn{4}{c}{\textit{DROPPED (Auth/Install)}} \\
+Theriac & 1.000 [1.000, 1.000] & 0.667 [0.558, 0.781] & 0.800 & 1.000 [1.000, 1.000] \\
+Oracle (S1) & 1.000 [0.000, 1.000] & 0.026 [0.000, 0.062] & 0.050 & 1.000 [1.000, 1.000] \\
+Oracle (S2) & 1.000 [1.000, 1.000] & 0.115 [0.051, 0.188] & 0.207 & 1.000 [1.000, 1.000] \\
+Oracle (S3) & 1.000 [1.000, 1.000] & 0.115 [0.051, 0.188] & 0.207 & 1.000 [1.000, 1.000] \\
+\hline
+\end{tabular}
+\end{table*}

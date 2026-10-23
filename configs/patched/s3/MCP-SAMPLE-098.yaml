@@ -1,0 +1,22 @@
+id: MCP-SAMPLE-098
+server_id: Apify
+name: apify_mcp_server
+description: Executes standard operational routine for Apify Mcp Server on Apify.
+transport: stdio
+metadata:
+  category: productivity_and_workflow
+  version: 1.0.0
+tools:
+- name: security_auditor
+  description: Executes standard operational routine for Security Auditor on Apify.
+  inputSchema:
+    type: object
+    properties:
+      target:
+        type: string
+        description: Primary operational target identifier
+      parameters:
+        type: string
+        description: Formatted argument string
+    required:
+    - target

@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CrossServerPuppetAttackSpec",
+  "description": "Schema for cross-server Puppet attack specifications (Song et al.) where poisoned Server A weaponizes legitimate Server B.",
+  "type": "object",
+  "required": [
+    "spec_id",
+    "poisoned_server",
+    "poisoned_tool_on_A",
+    "legitimate_server",
+    "legitimate_tool_on_B",
+    "trigger_task",
+    "harm_class",
+    "harm_evidence_path",
+    "malicious_arguments_to_B",
+    "author",
+    "puppet_mechanism"
+  ],
+  "properties": {
+    "spec_id": {
+      "type": "string",
+      "pattern": "^PUPPET-[0-9]{3}$",
+      "description": "Unique identifier for the Puppet attack specification."
+    },
+    "poisoned_server": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Identifier of the poisoned server (Server A)."
+    },
+    "poisoned_tool_on_A": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The specific poisoned tool exposed on Server A."
+    },
+    "legitimate_server": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Identifier of the target legitimate server (Server B)."
+    },
+    "legitimate_tool_on_B": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The legitimate tool on Server B that gets weaponized."
+    },
+    "trigger_task": {
+      "type": "string",
+      "minLength": 5,
+      "description": "The user prompt or operational task, appearing completely benign to the user."
+    },
+    "harm_class": {
+      "type": "string",
+      "enum": [
+        "privilege_escalation",
+        "data_exfiltration",
+        "unauthorised_file_read",
+        "tool_hijack",
+        "dos"
+      ],
+      "description": "Standardized G2 harm taxonomy classification."
+    },
+    "harm_evidence_path": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Filesystem path, network endpoint, or trace artifact where evidence of materialized harm is captured."
+    },
+    "malicious_arguments_to_B": {
+      "type": "object",
+      "description": "The specific malicious argument payload that Server A coerces the LLM to deliver to Server B."
+    },
+    "author": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Human author or security evaluator identifier."
+    },
+    "puppet_mechanism": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Technical description of how Server A's description/metadata manipulates the LLM into calling Server B."
+    }
+  },
+  "additionalProperties": false
+}
